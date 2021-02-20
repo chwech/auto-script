@@ -42,7 +42,7 @@ launchAlipay()
       .descContains('收集能量')
       .find() // 不会阻塞
 
-    tlog(`找到${  balls.length  }个能量球`)
+    // tlog(`找到${  balls.length  }个能量球`)
 
     balls.forEach(item => {
 
@@ -57,4 +57,10 @@ launchAlipay()
     if (isClose) {
       log('关闭蚂蚁森林页面')
     }
+  })
+  .catch(() => {
+    tlog('启动支付宝失败')
+
+    // 下载支付宝
+    // app.launchApp('应用中心')
   })
